@@ -1,0 +1,8 @@
+Graph--*________________
+
+for a non connected graph we can not find a minimum spanning tree
+
+diffrent ways for forming spanning tree is 
+((E(C[mathematical combination])E-1)-NumberOfCycles)
+
+https://www.programiz.com/dsa/priority-queue
