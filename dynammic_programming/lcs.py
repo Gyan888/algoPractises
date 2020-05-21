@@ -2,7 +2,7 @@ text1 = "AGGTAB"
 text2 = "GXTXAYB"
 
 
-# lowest common subsequence recursive approach 
+# longest common subsequence recursive approach 
 #complexity for this approach is 2^n
 
 
