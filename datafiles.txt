@@ -1,0 +1,341 @@
+ssh -p 2782 bbh_user@34.213.153.201
+ssh -i ~/Documents/testserver.pem -p 3999 ubuntu@18.216.230.168
+ssh -i ~/Documents/testserver.pem ubuntu@18.222.179.6
+
+chatTranscript:"USER SAYS: how are you doing\nBOTS SAYS: Good Bye.\nUSER SAYS: how are you doing\nBOTS SAYS: Good Bye.\nUSER SAYS: this is the best thing i have\nBOTS SAYS: I have my moments.\nUSER SAYS: how are you doing\nBOTS SAYS: Good Bye.\nUSER SAYS: how are you doing\nBOTS SAYS: Good Bye.\nUSER SAYS: this is the best thing i have\nBOTS SAYS: I have my moments.\nUSER SAYS: transfer the call please\nBOTS SAYS: Please wait for a moment. I am transferring this chat to live agent.\n"
+
+{$project : { 
+              month : {$month : "$entryTime"}, 
+              year : {$year :  "$entryTime"}
+          }}, 
+        {$group : { 
+                _id : {month : "$month" ,year : "$year" },  
+              total : {$sum : "$expenseAmount"} 
+        }}
+
+
+We1c0me@22!
+"172.31.102.44","172.31.22.149","172.31.41.151"
+curl -XGET '172.31.102.44:9200/_cluster/health?pretty'
+
+docker ps | grep "bbh-onestopanalytics" |awk '{print $1}' | xargs docker logs -f 
+docker ps | grep "middleware:stage" |awk '{print $1}' | xargs docker logs -f 
+docker ps | grep "nginx" |awk '{print $1}' | xargs docker logs -f 
+
+
+docker run \
+  --publish=7474:7474 --publish=7687:7687 \
+  --volume=$HOME/data:/data \
+  --volume=$HOME/logs:/logs \
+  --env=NEO4J_dbms_allow_upgrade=true \
+  --env=NEO4J_dbms_allow_format_migration=true \
+  neo4j:3.0
+
+
+
+#sorting the process by consuming ram this will list the top 10 process
+
+ps aux  | awk '{print $6/1024 " MB\t\t"  $2 "\t\t" $11}'  | sort -n -r | head -n 10  
+ 
+
+
+'https://bbhadmin:bbh@1234@esstage.blackbelthelp.com'
+
+{ "Name" : "CCCS", "Createdby" : "gyan", "tenantId" : "onestopstage", "QL" : { "adminUserName" : "ssoadmin@blackbelthelp.com", "adminPassword" : "blackbelthelp@123", "tenantDomain" : "blackbelthelp.com", "QLTenantId" : "1016" } }
+
+{ "_id" : ObjectId("5d15e3fa2b384c58ed0fa501"), "Name" : "CCCS", "Createdby" : "gyan", "tenantId" : "mybbhu", "botExists" : true, "tenantDbName" : "BBH_mybbhu" }
+
+
+
+        
+db.BBHServices.aggregate([
+        {$sort: {"createDate": -1}},
+        {$match:{"tenantId":"onestopstage","service_type":"fcr"}},
+        {$project : { 
+              month : {$month : "$ApplicableFrom"}, 
+              year : {$year :  "$ApplicableFrom"},
+              isApplied:1,
+              createDate:1,
+              tenantId:1,
+              ApplicableFrom:1,
+              CategoryIndex:1,
+              exclusion:1,
+              addOnFilter:1,
+              inclusion:1,
+              filterInclusion:1,
+              filterExclusion:1
+          }},         
+        {$group:{
+            "_id":{month:"$month",year:"$year"},
+            "docs":{ $first: "$$ROOT"}
+            }}])
+
+
+db.BBHServices.find({"ApplicableFrom":{$gte:"2019-02-01",$lte:"2019-02-28"}})
+
+db.BBHServices.aggregate([
+{$sort: {ApplicableFrom: -1,createdDate: -1}},
+{$match:{"tenantId":"onestopstage"}},
+{ $group:
+         {              
+           _id: {  filter: { $year: "$ApplicableFrom"} },
+           data: { $push:  { item: "data"} }
+     }
+   }
+])
+
+
+
+collection.aggregate([
+{$sort: {_id: -1}},
+{$match:{"EmployeeId":0001}},
+{$group:{"_id":"$EmployeeID",
+    "speciality":{$push:"$Speciality"},
+    "Code":{$push:"$Code"},
+    "Age":{$push:"$Age"}}}
+])
+
+
+ssh -i ~/Documents/testserver.pem -p 3999 ubuntu@18.216.230.168
+
+172.32.0.22
+password:bbh@1234
+login=bbh_user
+pass=BBHAI@2018
+evcventures
+
+ioappsterautmember3@gmail.com
+Appster@1234 
+
+mongo admin -u webapp -p
+mongo admin -u bbh-admin -p 
+password=bbhplatform
+
+
+`sudo mongodump --db BBHONESTOP -c intent --out ~/`date +"%m-%d-%y"`
+sudo mongorestore --db CEAI  --drop ./CEAI/
+
+mongod --replSet evc --logpath "xx.log" --dbpath rs1 --port 27017 &
+
+
+sudo mongodump --db BBHONESTOP -u bbh-admin -p bbhplatform --out BBHONESTOP270618
+sudo mongodump --db BBH_MWCCBBH -c SERVICE_FILTERS -u bbh-admin -p bbhplatform --out BBHMWCCBBH
+sudo mongodump --db BBH_MWCCBBH -c SERVICE_FILTERS -u bbh-admin -p bbhplatform --out BBHMWCCBBH --authenticationDatabase admin
+
+{ "_id" : ObjectId("5d15e2e92b384c587843f837"), "sfTicketBaseUrl" : "https://blackbelthelp.force.com/helpdesk", "RecordTypeId" : "012d0000000wuPdAAI", "AccountId" : "001d000001FMLhNAAX" }
+
+
+160743907
+126
+
+0010n00000zUMDeAAO
+012d0000000wuPdAAI
+
+C:\Program Files\MongoDB\Server\4.0\bin>mongorestore --host localhost -d evcventures  \Users\gyanender.kumar\08-30-18 ;
+nano /etc/supervisor/supervisord.conf
+
+
+select a.id,a.modifieddate,b.AlertType,a.alert,a.enddatetime,c.ApplicationName,a.description ,a.institutionid,a.createddate,a.salesforce_ticket_id,a.startdatetime,a.isactive from tblalerts as a left join mtblalerttypes as b on a.alerttypeid=b.id left join tblapplications as c on a.applicationid=c.id where a.isactive=1 and a.institutionid=126; 
+
+mongo "mongodb://cluster0-shard-00-00-gkvng.mongodb.net:27017,cluster0-shard-00-01-gkvng.mongodb.net:27017,cluster0-shard-00-02-gkvng.mongodb.net:27017/test?replicaSet=Cluster0-shard-0" --ssl --authenticationDatabase admin --username deepak --password VPRIqSz9kWa4OhTo
+
+
+from sqlalchemy import create_engine
+engine = create_engine('postgresql+psycopg2://gyan:password123@localhost/dgflow')
+
+
+db.credentials.find_one({'serviceType': 'MWCCTest'})
+
+conn = redis.StrictRedis(
+        host = "127.0.0.1",
+        port = 6379)
+		
+		
+-- Database: postgres
+
+-- DROP DATABASE postgres;
+
+CREATE TABLE Agent_Name(
+    ID int PRIMARY KEY NOT NULL,
+    Agent_Name TEXT    NOT NULL UNIQUE,
+    create_date timestamp  NOT NULL
+	);
+
+
+CREATE TABLE Tenant(
+    ID int PRIMARY KEY NOT NULL,
+    Tenant_name TEXT    NOT NULL ,
+    create_date timestamp  NOT NULL
+	);
+
+CREATE TABLE Replies(
+   ID SERIAL,
+   Associated_agent INT references Agent_Name(ID),
+   Associated_tenant INT references Tenant(ID),
+   action_name TEXT ,
+   intent_name TEXT ,
+   reply TEXT    NOT NULL 
+);
+
+	
+db.createUser(
+{
+  user: "webapp",
+  pwd: "webapp2017!#",
+  roles:[{role: "userAdmin" , db:"CEAI"}]})
+
+
+sudo service supervisor restart
+sudo  supervisorctl restart mwcc
+/var/log/bots/American_sentinal  /var/log/bots/cccs  /var/log/bots/limestone  /var/log/bots/mwcc
+
+ps -aux | grep "mwcc" | awk '{print $2}' | xargs kill -9
+url ="mongodb://deepak:VPRIqSz9kWa4OhTo@cluster0-shard-00-00-gkvng.mongodb.net:27017,cluster0-shard-00-01-gkvng.mongodb.net:27017,cluster0-shard-00-02-gkvng.mongodb.net:27017/evcventures?authSource=admin&replicaSet=Cluster0-shard-0&ssl=true" 
+
+client.database_names()
+after connecting to the database 
+db.collection_names()
+intent_dict 
+mongo --host evc/localhost:27017,localhost:27017,localhost:27019
+
+
+
+#command to run the rasa server 
+python -m rasa_nlu.server  --path ./models/nlu/
+
+# command example curl query
+curl -XPOST localhost:5000/parse -d '{"q":"Enrollment", "project":"default","model":"enrollment"}'
+ 
+#Training command for rasa example  
+python -m rasa_nlu.train -c config.yml -d Enrollment/intents/ --fixed_model_name enrollment
+
+	
+
+
+rm -r *.pyc
+git pull origin master
+sudo supervisorctl restart mwcc
+
+mongodump -d evcventures -u SUPERUSER -p "SUPERUSER-PASSWORD" -o "~/" --authenticationDatabase AUTH-DB --ssl --port 27017 -h "mongodb://deepak:VPRIqSz9kWa4OhTo@cluster0-shard-00-00-gkvng.mongodb.net:27017,cluster0-shard-00-01-gkvng.mongodb.net:27017,cluster0-shard-00-02-gkvng.mongodb.net:27017/evcventures?authSource=admin&replicaSet=Cluster0-shard-0&ssl=true" 
+
+
+db.createUser({
+    user: 'gyan',
+    pwd: 'evc123',
+    roles: [{ role: 'read', db:'evcventures'}]
+})
+
+url="mongodb://gyan:evc123@18.191.171.100/evcventures
+url="mongodb://gyan:evc123@127.0.0.1/evcventures
+
+
+git clone using private key 
+ssh-agent bash -c 'ssh-add /c/Users/gyanender.kumar/.ssh/id_rsa; git clone git@gitlab.com:deepaksmvdu/mwcc.git'
+
+
+
+vocabulary_size = len(string.ascii_lowercase) + 2 # [a-z] + ' ' + #(end of sentence)
+first_letter = ord(string.ascii_lowercase[0])
+<type 'list'>: [{'americanSentinal': 
+
+
+
+sudo nmap -Pn  -p 3306 ec2-18-191-202-180.us-east-2.compute.amazonaws.com
+
+# command to to get instance id 
+wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
+
+
+{"query":{"bool":{"must":[{"term":{"Case_Source__c":"Chat"}},{"exists":{"field":"Chat_Log__c"}}]}},"aggs":{"type":{"terms":{"field":"Ticket_Item__c"}}},"size":10000}
+
+
+3) chatbot report data is need to be added in existing system before sending it further and generating reports
+
+
+
+prereqirement
+2) Admin panels mockscreens and data requirement from backend 
+
+
+182.72.77.14
+
+
+sudo /usr/share/logstash/bin/logstash   --path.settings /etc/logstash/ -f ./
+
+/usr/share/logstash/bin/logstash-plugin
+
+ssh -i ~/Documents/testserver.pem ubuntu@18.188.249.239  
+ //test server ip
+
+sudo tail -f /var/log/nginx/access.log
+logstash-input-google_pubsub
+curl -X DELETE "localhost:9200/incontact"
+
+"SELECT tbla.*, mtat.AlertType, mtat.AlertTypeIcon FROM `tblmessagetemplates` tbla LEFT JOIN `mtblalerttypes` mtat ON tbla.AlertTypeId=mtat.id LEFT JOIN tblalerts alert ON alert.AlertTypeId= tbla.AlertTypeId WHERE tbla.ApplicationId='".$row_id."' AND tbla.InstitutionId='".$instt_id."' AND alert.InstitutionId='".$instt_id."' AND tbla.IsActive='1' AND alert.IsActive='1' ORDER BY tbla.`CreatedDate` DESC LIMIT 0,1";
+
+  
+
+db.TENANT_INFO.findOneAndUpdate({"tenantId":"onestopstage"},{$set:{"ceapp.Institute_id":"10131"}})
+
+db.TENANT_INFO.findOne({"tenantId":"LIMBBH"}).salesforce
+
+python:                                                                                                   client.bbhonestop.tenantInfo.update({},{'$set':{"lexicon.Analytics.view_id":"160743907"}},multi=True) 
+db.TENANT_INFO.findOneAndUpdate({"tenantId":"bbhdemo"},{$set:{"lexicon.Institute_id":"126"}})
+
+db.TENANT_INFO.findOneAndUpdate({"tenantId":"onestopstage"},{$set:{"ceapp.Institute_id":"10131"}})
+
+client.bbhonestop.tenantInfo.find_one_and_update({"tenantId":"5f372771-5d31-4c66-a88f-c8fc59e40a9a"},{'$set':{"salesforce.salesforceUserDetails.recordTypeId":{
+            "   it_lms" : "012d0000000wxyuAAA",
+            "smart_chat" : ""
+        }}})                                                                                                                                               
+
+db.users.findOne({"tenantId" : {$regex : ".*lim.*"}});
+db.users.findOne({"tenantId" : /.*MWCC.*/});
+select a.id, b.AlertType,c.ApplicationName,a.institutionid,a.isactive from tblalerts as a left join mtblalerttypes as b on a.alerttypeid=b.id left join tblapplications as c on a.applicationid=c.id ;
+
+
+traceroute -m 50 -N 32 172.31.48.12 ////here -m is for the no of hops default=30 and -N is the no subquerries to be sent default=16 in parllel 
+
+sudo openssl s_client -connect //
+
+sudo fuser 5000/tcp -k // this command will kill the service runnig at a particular port 
+
+sqlcmd -S localhost -d BlackBeltHelp -U SA -P Gyan.123 -i ~/Downloads/BBHELP_DBSCRIPT.sql -o ./ms.log 
+
+
+"jdbc:sqlserver:/localhost:1434;databaseName=BlackBeltHelp;user=sa;password=Gyan.123";
+-963
+
+select a.id ,b.AlertType ,a.Message ,a.InstitutionId ,c.ApplicationName ,a.CreatedDate ,a.IsActive from tblmessagetemplates as a left join mtblalerttypes  as b on a.AlertTypeId=b.id left join tblapplications as c on a.applicationid=c.id
+
+node_modules/**
+*.pyc
+package-lock.json
+server.err.log
+server.out.log
+.idea/**
+..git/**
+*.log
+
+#!/usr/bin/env bash
+mkdir -p rs1 rs2 rs3
+mongod --replSet evc --logpath "1.log" --dbpath rs1 --port 27017 &
+mongod --replSet evc --logpath "2.log" --dbpath rs1 --port 27018 &
+mongod --replSet evc --logpath "3.log" --dbpath rs1 --port 27019 &
+003d000002cMdKQAA0
+003d000000S6zWbAAJ
+
+################## conditions in sql #################################################3
+
+if position(contract_brokerages.type in excluded_contract.type) > 0, don't include --- position will be > 0 for ('Seller' in 'Seller Invoice')
+if pre-delivery - invoice item for cc as item type, rejected=false and payer=party, if exists don't include
+if post-delivery - invoice item for completed fm/tt as item type, rejected=false and payer=party, if exists don't include. Include only id atleast one completed fm/tt exists
+contract status should be in ('confirmed', 'open', 'in_progress', 'delivered', 'completed', 'invoiced', 'paid')
+seller/buyer represented by should be user and seller/buyer company should be party company```
+
+
+
+
+
+
+
